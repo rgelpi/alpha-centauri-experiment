@@ -52,12 +52,14 @@ This repository contains the source code for a web-based psychology study applic
 
 ## Project Structure
 
+```
 src/
 ├─ app/               # Next.js app
 ├─ components/        # UI components
 ├─ lib/               # Experiment, scale, and firebase configuration
 public/               
 └─ images/            # Images for the experiment
+```
 
 -   `src/app`: Contains the main application pages and layout (App Router).
 -   `src/components`: Reusable UI components for different stages of the experiment (e.g., `ConsentForm`, `VignetteDisplay`, `PsychometricScales`).
