@@ -56,10 +56,7 @@ export default function ConsentForm({ onConsent }) {
           <strong>What is the Institutional Review Board (IRB) and how does it protect you?</strong><br />This study has been reviewed by an Institutional Review Board (IRB), a group of people that reviews human research studies. The IRB can help you if you have questions about your rights as a research participant or if you have other questions, concerns or complaints about this research study.  You may contact the IRB at 410-516-6580 or hirb@jhu.edu.
         </p>
         <p>
-          <strong>What should you do if you have questions about the study?</strong><br />Call the principal investigator, Dr. Gillian K. Hadfield at [insert telephone number]. If you wish, you may contact the principal investigator by letter. The address is on page one of this consent form. If you cannot reach the principal investigator or wish to talk to someone else, call the IRB office at 410-516-5680.
-        </p>
-        <p>
-          You can ask questions about this research study now or at any time during the study, by talking to the researcher(s) working with you or by calling [insert name and role] at [insert phone number].
+          <strong>What should you do if you have questions about the study?</strong><br />Contact the principal investigator, Dr. Gillian K. Hadfield by email at [insert email here]. If you cannot reach the principal investigator or wish to talk to someone else, call the IRB office at 410-516-5680.
         </p>
         <p>
           If you have questions about your rights as a research participant or feel that you have not been treated fairly, please call the Homewood Institutional Review Board at Johns Hopkins University at (410) 516-6580.
