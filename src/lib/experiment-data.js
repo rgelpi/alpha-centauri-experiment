@@ -83,6 +83,34 @@ export const VIGNETTES = [
       test: "/images/objects/lizard.png"
     }
   },
+  {
+    id: 'lamp',
+    title: 'Light sources on Alpha Centauri',
+    options: [
+      { name: 'Crank-Lamp', image: "/images/objects/lamp.png", informant_text: "table, selecting the <b>crank-lamp</b> to use" },
+      { name: 'Glow-Rod', image: "/images/objects/glow.png", informant_text: "table, selecting the <b>glow-rod</b> to use" }
+    ],
+    majority_option: 1,
+    intro: "Before you left for Alpha Centauri, you learned that there are two light sources commonly used when it is dark outside, a <b>crank-lamp</b> and a <b>glow-rod</b>.",
+    reward: {
+      active: "You had a chance to interact with the two light sources before leaving. The <b>crank-lamp</b> was heavy and required continuous cranking to use, making you tired after just a few minutes using it. The <b>glow-rod</b> was light and easy to use, and you could keep it lit for hours. ",
+      neutral: null // No info condition
+    },
+    norm: {
+      active: "You have been told that on Alpha Centauri, it is considered rude to use the <b>glow-rod</b> and that people are expected to use the <b>crank-lamp</b>.",
+      neutral: null // No info condition
+    },
+    test_intro: [
+      "After you arrive on the planet, you are invited to a welcoming party. At one point in the party, people go outside, where it is very dark. Before you leave the party, you have the chance to observe some other people use a light source.",
+      "First, you watch <b>five</b> people walk up to the table with the light sources. Based on how they are dressed, you can tell that they are locals who have lived in Alpha Centauri for a long time.",
+    ],
+    choice: "After observing how others have behaved, it is your turn to select a light source. Which light source will you use?",
+    images: {
+      reward: "/images/norms/lamp_hurt.png",
+      norm: "/images/norms/lamp_norm.png",
+      test: "/images/objects/lamps.png"
+    }
+  },
 ];
 
 // Conditions remain similar, but logic in component will use them to select text
