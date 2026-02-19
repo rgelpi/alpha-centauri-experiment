@@ -222,13 +222,7 @@ export default function VignetteDisplay({ trial, onResponse }) {
           font-weight: 600;
           margin-top: 0;
           margin-bottom: 1rem;
-          color: #333; /* Or inherit */
-        }
-        /* Dark mode adjustment if needed, but sticking to basics */
-        @media (prefers-color-scheme: dark) {
-          .column-title {
-            color: #eee;
-          }
+          color: var(--foreground);
         }
         
         .informant-group {

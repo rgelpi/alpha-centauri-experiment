@@ -36,7 +36,7 @@ export default function PsychometricScales({ onComplete }) {
   return (
     <div className="section-container">
       <h2>Questionnaire</h2>
-      <p>Please indicate how much you agree with the following statements.</p>
+      <p>Please indicate how much you agree with the following statements on a scale from 1 (Strongly disagree) to 7 (Strongly agree).</p>
 
       <div className="questions-list">
         {QUESTIONS.map((q) => (

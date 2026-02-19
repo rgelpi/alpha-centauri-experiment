@@ -15,13 +15,7 @@
   --foreground: #ededed;
 }
 
-/* Optional: Respect system preference if no override is set (handled by JS usually, but good fallback) */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+
 
 body {
   color: var(--foreground);
