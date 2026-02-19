@@ -1,0 +1,135 @@
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* Default to light mode variables */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* Explicit Dark Mode override */
+[data-theme='dark'] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+/* Optional: Respect system preference if no override is set (handled by JS usually, but good fallback) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Global Component Styles */
+
+.section-container {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--background);
+  border: 1px solid var(--foreground);
+  border-radius: 8px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .section-container {
+    padding: 1rem;
+  }
+}
+
+.primary-button {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 2rem auto 0;
+  padding: 0.75rem 2rem;
+  background: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.primary-button:hover {
+  background: #0051a2;
+  transform: translateY(-1px);
+}
+
+.primary-button:active {
+  transform: translateY(1px);
+}
+
+.primary-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.option-button {
+  padding: 1rem;
+  font-size: 1.2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid var(--foreground);
+  color: var(--foreground);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  min-width: 150px;
+}
+
+[data-theme='light'] .option-button {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.option-button:hover {
+  background: rgba(125, 125, 125, 0.15);
+  transform: translateY(-2px);
+}
+
+.option-button.selected {
+  border-color: #0070f3;
+  background: rgba(0, 112, 243, 0.15);
+  color: #0070f3;
+  box-shadow: 0 0 0 2px rgba(0, 112, 243, 0.3);
+  font-weight: bold;
+}
+
+.text-input,
+.select-input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: 1px solid var(--foreground);
+  background: transparent;
+  color: var(--foreground);
+  margin-top: 0.5rem;
+  box-sizing: border-box;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.options-container {
+  display: flex !important;
+  gap: 1rem !important;
+  justify-content: center !important;
+  margin-bottom: 2rem;
+  width: 100%;
+}
