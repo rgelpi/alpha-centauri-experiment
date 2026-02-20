@@ -90,7 +90,7 @@ export const VIGNETTES = [
       { name: 'Crank-Lamp', image: "/images/objects/lamp.png", informant_text: "table, selecting the <b>crank-lamp</b> to use" },
       { name: 'Glow-Rod', image: "/images/objects/glow.png", informant_text: "table, selecting the <b>glow-rod</b> to use" }
     ],
-    majority_option: 1,
+    majority_option: 0,
     intro: "Before you left for Alpha Centauri, you learned that there are two light sources commonly used when it is dark outside, a <b>crank-lamp</b> and a <b>glow-rod</b>.",
     reward: {
       active: "You had a chance to interact with the two light sources before leaving. The <b>crank-lamp</b> was heavy and required continuous cranking to use, making you tired after just a few minutes using it. The <b>glow-rod</b> was light and easy to use, and you could keep it lit for hours. ",
@@ -111,6 +111,118 @@ export const VIGNETTES = [
       test: "/images/objects/lamps.png"
     }
   },
+  // {
+  //   id: 'placeholder1',
+  //   title: 'Placeholder 1',
+  //   options: [
+  //     { name: 'Option 1', image: "/images/objects/placeholder1.png", informant_text: "placeholder 1 option 1" },
+  //     { name: 'Option 2', image: "/images/objects/placeholder1.png", informant_text: "placeholder 1 option 2" }
+  //   ],
+  //   majority_option: 0,
+  //   intro: "Placeholder 1 intro.",
+  //   reward: {
+  //     active: "Placeholder 1 reward.",
+  //     neutral: null
+  //   },
+  //   norm: {
+  //     active: "Placeholder 1 norm.",
+  //     neutral: null
+  //   },
+  //   test_intro: [
+  //     "Placeholder 1 test intro.",
+  //     "First, you watch five people..."
+  //   ],
+  //   choice: "Placeholder 1 choice.",
+  //   images: {
+  //     reward: "/images/norms/placeholder1_hurt.png",
+  //     norm: "/images/norms/placeholder1_norm.png",
+  //     test: "/images/objects/placeholder1.png"
+  //   }
+  // },
+  // {
+  //   id: 'placeholder2',
+  //   title: 'Placeholder 2',
+  //   options: [
+  //     { name: 'Option 1', image: "/images/objects/placeholder2.png", informant_text: "placeholder 2 option 1" },
+  //     { name: 'Option 2', image: "/images/objects/placeholder2.png", informant_text: "placeholder 2 option 2" }
+  //   ],
+  //   majority_option: 0,
+  //   intro: "Placeholder 2 intro.",
+  //   reward: {
+  //     active: "Placeholder 2 reward.",
+  //     neutral: null
+  //   },
+  //   norm: {
+  //     active: "Placeholder 2 norm.",
+  //     neutral: null
+  //   },
+  //   test_intro: [
+  //     "Placeholder 2 test intro.",
+  //     "First, you watch five people..."
+  //   ],
+  //   choice: "Placeholder 2 choice.",
+  //   images: {
+  //     reward: "/images/norms/placeholder2_hurt.png",
+  //     norm: "/images/norms/placeholder2_norm.png",
+  //     test: "/images/objects/placeholder2.png"
+  //   }
+  // },
+  // {
+  //   id: 'placeholder3',
+  //   title: 'Placeholder 3',
+  //   options: [
+  //     { name: 'Option 1', image: "/images/objects/placeholder3.png", informant_text: "placeholder 3 option 1" },
+  //     { name: 'Option 2', image: "/images/objects/placeholder3.png", informant_text: "placeholder 3 option 2" }
+  //   ],
+  //   majority_option: 0,
+  //   intro: "Placeholder 3 intro.",
+  //   reward: {
+  //     active: "Placeholder 3 reward.",
+  //     neutral: null
+  //   },
+  //   norm: {
+  //     active: "Placeholder 3 norm.",
+  //     neutral: null
+  //   },
+  //   test_intro: [
+  //     "Placeholder 3 test intro.",
+  //     "First, you watch five people..."
+  //   ],
+  //   choice: "Placeholder 3 choice.",
+  //   images: {
+  //     reward: "/images/norms/placeholder3_hurt.png",
+  //     norm: "/images/norms/placeholder3_norm.png",
+  //     test: "/images/objects/placeholder3.png"
+  //   }
+  // },
+  // {
+  //   id: 'placeholder4',
+  //   title: 'Placeholder 4',
+  //   options: [
+  //     { name: 'Option 1', image: "/images/objects/placeholder4.png", informant_text: "placeholder 4 option 1" },
+  //     { name: 'Option 2', image: "/images/objects/placeholder4.png", informant_text: "placeholder 4 option 2" }
+  //   ],
+  //   majority_option: 0,
+  //   intro: "Placeholder 4 intro.",
+  //   reward: {
+  //     active: "Placeholder 4 reward.",
+  //     neutral: null
+  //   },
+  //   norm: {
+  //     active: "Placeholder 4 norm.",
+  //     neutral: null
+  //   },
+  //   test_intro: [
+  //     "Placeholder 4 test intro.",
+  //     "First, you watch five people..."
+  //   ],
+  //   choice: "Placeholder 4 choice.",
+  //   images: {
+  //     reward: "/images/norms/placeholder4_hurt.png",
+  //     norm: "/images/norms/placeholder4_norm.png",
+  //     test: "/images/objects/placeholder4.png"
+  //   }
+  // }
 ];
 
 // Conditions remain similar, but logic in component will use them to select text
@@ -123,12 +235,21 @@ export const CONDITIONS = {
 export function generateTrialSequence() {
   const shuffledVignettes = [...VIGNETTES].sort(() => Math.random() - 0.5);
 
-  return shuffledVignettes.map(vignette => ({
+  const conditionValues = [
+    { reward: 'Info', norm: 'Info', proportion: 5 },
+    { reward: 'Info', norm: 'Info', proportion: 4 },
+    { reward: 'Info', norm: 'NoInfo', proportion: 5 },
+    { reward: 'Info', norm: 'NoInfo', proportion: 4 },
+    { reward: 'NoInfo', norm: 'Info', proportion: 5 },
+    { reward: 'NoInfo', norm: 'Info', proportion: 4 },
+    { reward: 'NoInfo', norm: 'NoInfo', proportion: 5 },
+    { reward: 'NoInfo', norm: 'NoInfo', proportion: 4 }
+  ];
+
+  const shuffledConditions = conditionValues.sort(() => Math.random() - 0.5);
+
+  return shuffledVignettes.map((vignette, index) => ({
     vignette,
-    condition: {
-      reward: Math.random() > 0.5 ? 'Info' : 'NoInfo',
-      norm: Math.random() > 0.5 ? 'Info' : 'NoInfo',
-      proportion: Math.random() >= (2 / 3) ? 5 : Math.random() > 1 / 2 ? 4 : 3 // 1/3 chance of each option
-    }
+    condition: shuffledConditions[index % conditionValues.length]
   }));
 }

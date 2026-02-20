@@ -14,6 +14,7 @@ function ExperimentContent() {
   const [step, setStep] = useState('CONSENT'); // CONSENT, CAPTCHA, INTRO, VIGNETTES, SCALES, DEMOGRAPHICS, THANK_YOU
   const [data, setData] = useState({
     consent: false,
+    consentTimestamp: null,
     vignetteResponses: [],
     scaleResponses: {},
     demographics: {},
@@ -25,7 +26,11 @@ function ExperimentContent() {
   });
 
   const handleConsent = () => {
-    setData(prev => ({ ...prev, consent: true }));
+    setData(prev => ({
+      ...prev,
+      consent: true,
+      consentTimestamp: new Date().toISOString()
+    }));
     setStep('CAPTCHA');
   };
 
@@ -39,16 +44,31 @@ function ExperimentContent() {
 
   const handleVignettesComplete = (responses) => {
     setData(prev => ({ ...prev, vignetteResponses: responses }));
-    setStep('SCALES');
-  };
-
-  const handleScalesComplete = (responses) => {
-    setData(prev => ({ ...prev, scaleResponses: responses }));
     setStep('DEMOGRAPHICS');
   };
 
+  // // For now, skip scales
+  // const handleScalesComplete = (responses) => {
+  //   setData(prev => ({ ...prev, scaleResponses: responses }));
+  //   setStep('DEMOGRAPHICS');
+  // };
+
   const handleDemographicsComplete = async (responses) => {
-    const finalData = { ...data, demographics: responses, completedAt: new Date().toISOString() };
+    const completedAt = new Date().toISOString();
+    let completionTimeSeconds = null;
+
+    if (data.consentTimestamp) {
+      const start = new Date(data.consentTimestamp);
+      const end = new Date(completedAt);
+      completionTimeSeconds = (end - start) / 1000;
+    }
+
+    const finalData = {
+      ...data,
+      demographics: responses,
+      completedAt,
+      completionTimeSeconds
+    };
     setData(finalData);
 
     // Save to backend

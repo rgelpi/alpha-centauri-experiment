@@ -12,7 +12,7 @@ export default function ConsentForm({ onConsent }) {
           You are being asked to join a research study. Participation in this study is voluntary. Even if you decide to join now, you can change your mind later.
         </p>
         <p>
-          <strong>Research Summary (Key Information):</strong><br />The information in this section is intended to be an introduction to the study only.  Complete details of the study are listed in the sections below. If you are considering participation in the study, the entire document should be discussed with you before you make your final decision.  You can ask questions about the study now and at any time in the future.
+          <strong>Research Summary (Key Information):</strong><br />The information in this section is intended to be an introduction to the study only.  Complete details of the study are listed in the sections below. If you are considering participation in the study, please read the following sections carefully before making your decision.
         </p>
         <p>
           The purpose of this study is to understand how people use different kinds of information, such as potential rewards that are available in social settings to reason about how to behave in unfamiliar environments. In the study, you will read a few scenarios in which you will learn how others are behaving, and you will answer some questions about how you would behave in this setting.
@@ -56,7 +56,7 @@ export default function ConsentForm({ onConsent }) {
           <strong>What is the Institutional Review Board (IRB) and how does it protect you?</strong><br />This study has been reviewed by an Institutional Review Board (IRB), a group of people that reviews human research studies. The IRB can help you if you have questions about your rights as a research participant or if you have other questions, concerns or complaints about this research study.  You may contact the IRB at 410-516-6580 or hirb@jhu.edu.
         </p>
         <p>
-          <strong>What should you do if you have questions about the study?</strong><br />Contact the principal investigator, Dr. Gillian K. Hadfield by email at [insert email here]. If you cannot reach the principal investigator or wish to talk to someone else, call the IRB office at 410-516-5680.
+          <strong>What should you do if you have questions about the study?</strong><br />Contact the principal investigator, Dr. Gillian K. Hadfield, by email at [insert email here]. If you cannot reach the principal investigator or wish to talk to someone else, call the IRB office at 410-516-5680.
         </p>
         <p>
           If you have questions about your rights as a research participant or feel that you have not been treated fairly, please call the Homewood Institutional Review Board at Johns Hopkins University at (410) 516-6580.
