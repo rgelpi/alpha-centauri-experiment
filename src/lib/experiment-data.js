@@ -111,62 +111,62 @@ export const VIGNETTES = [
       test: "/images/objects/lamps.png"
     }
   },
-  // {
-  //   id: 'placeholder1',
-  //   title: 'Placeholder 1',
-  //   options: [
-  //     { name: 'Option 1', image: "/images/objects/placeholder1.png", informant_text: "placeholder 1 option 1" },
-  //     { name: 'Option 2', image: "/images/objects/placeholder1.png", informant_text: "placeholder 1 option 2" }
-  //   ],
-  //   majority_option: 0,
-  //   intro: "Placeholder 1 intro.",
-  //   reward: {
-  //     active: "Placeholder 1 reward.",
-  //     neutral: null
-  //   },
-  //   norm: {
-  //     active: "Placeholder 1 norm.",
-  //     neutral: null
-  //   },
-  //   test_intro: [
-  //     "Placeholder 1 test intro.",
-  //     "First, you watch five people..."
-  //   ],
-  //   choice: "Placeholder 1 choice.",
-  //   images: {
-  //     reward: "/images/norms/placeholder1_hurt.png",
-  //     norm: "/images/norms/placeholder1_norm.png",
-  //     test: "/images/objects/placeholder1.png"
-  //   }
-  // },
-  // {
-  //   id: 'placeholder2',
-  //   title: 'Placeholder 2',
-  //   options: [
-  //     { name: 'Option 1', image: "/images/objects/placeholder2.png", informant_text: "placeholder 2 option 1" },
-  //     { name: 'Option 2', image: "/images/objects/placeholder2.png", informant_text: "placeholder 2 option 2" }
-  //   ],
-  //   majority_option: 0,
-  //   intro: "Placeholder 2 intro.",
-  //   reward: {
-  //     active: "Placeholder 2 reward.",
-  //     neutral: null
-  //   },
-  //   norm: {
-  //     active: "Placeholder 2 norm.",
-  //     neutral: null
-  //   },
-  //   test_intro: [
-  //     "Placeholder 2 test intro.",
-  //     "First, you watch five people..."
-  //   ],
-  //   choice: "Placeholder 2 choice.",
-  //   images: {
-  //     reward: "/images/norms/placeholder2_hurt.png",
-  //     norm: "/images/norms/placeholder2_norm.png",
-  //     test: "/images/objects/placeholder2.png"
-  //   }
-  // },
+  {
+    id: 'plants',
+    title: 'Plants on Alpha Centauri',
+    options: [
+      { name: 'Squeezing the stem', image: "/images/objects/plant-stem.png", informant_text: "plant, harvesting nectar by <b>squeezing the stem</b>" },
+      { name: 'Plucking the petals', image: "/images/objects/plant-petal.png", informant_text: "plant, harvesting nectar by <b>plucking the petals</b>" }
+    ],
+    majority_option: 0,
+    intro: "Before you left for Alpha Centauri, you learned about a common plant called the sun-blossom that secretes a sweet nectar. A common leisure activity is to go to fields of sun-blossoms to harvest the nectar. Two methods exist to do this: <b>squeezing the stem</b> or <b>plucking the petals</b>.",
+    reward: {
+      active: "You had a chance to try both methods before leaving. When you tried <b>squeezing the stem</b>, it released a sap that gave you an uncomfortable, itchy rash. When you tried <b>plucking the petals</b>, it was easy, painless, and safely yielded the nectar.",
+      neutral: null
+    },
+    norm: {
+      active: "You have been told that on Alpha Centauri, it is considered rude to harvest by <b>plucking the petals</b>, and that people are expected to harvest by <b>squeezing the stem</b>.",
+      neutral: null
+    },
+    test_intro: [
+      "After you arrive on the planet, you are invited to a welcoming party. As part of the gathering, people decide to go to a sun-blossom field to harvest nectar.<br><br>Before you harvest some nectar for yourself, you have the chance to watch some other people choose which method they will use.",
+      "First, you watch <b>five</b> people walk up to the plants. Based on how they are dressed, you can tell that they are locals who have lived in Alpha Centauri for a long time."
+    ],
+    choice: "After observing how others have behaved, it is your turn to harvest nectar. What method will you use?",
+    images: {
+      reward: "/images/norms/plant_hurt.png",
+      norm: "/images/norms/plant_norm.png",
+      test: "/images/objects/plant.png"
+    }
+  },
+  {
+    id: 'offering',
+    title: 'Offerings on Alpha Centauri',
+    options: [
+      { name: 'Bare hands', image: "/images/objects/hands.png", informant_text: "offering, carrying it with their <b>bare hands</b>" },
+      { name: 'Hover-tray', image: "/images/objects/tray.png", informant_text: "offering, carrying it using a <b>hover-tray</b>" }
+    ],
+    majority_option: 0,
+    intro: "Before you left for Alpha Centauri, you learned that it is customary to bring a small celestial stone as an offering when attending a gathering. You can carry the offering in your <b>bare hands</b> or by using a <b>hover-tray</b>.",
+    reward: {
+      active: "You had a chance to hold a celestial stone before leaving. The stone was exceptionally freezing to the touch; when you carried it in your <b>bare hands</b>, they ached with blistering cold. When you used the <b>hover-tray</b>, your hands were completely protected and carrying it was painless.",
+      neutral: null
+    },
+    norm: {
+      active: "You have been told that on Alpha Centauri, it is considered rude to use the <b>hover-tray</b>, and that people are expected to carry the offering in their <b>bare hands</b>.",
+      neutral: null
+    },
+    test_intro: [
+      "After you arrive on the planet, you are invited to a welcoming party. Near the entrance, there is a pile of celestial stones for guests to take in order to make an offering.<br><br>Before you take an offering yourself, you have the chance to watch some other people choose how they will carry it.",
+      "First, you watch <b>five</b> people walk up to the offerings. Based on how they are dressed, you can tell that they are locals who have lived in Alpha Centauri for a long time."
+    ],
+    choice: "After observing how others have behaved, it is your turn to pick up a stone to make an offering. How will you carry it?",
+    images: {
+      reward: "/images/norms/offering_hurt.png",
+      norm: "/images/norms/offering_norm.png",
+      test: "/images/objects/offering.png"
+    }
+  },
   // {
   //   id: 'placeholder3',
   //   title: 'Placeholder 3',
