@@ -137,7 +137,7 @@ export default function DemographicsForm({ onComplete }) {
         </div>
 
         <button type="submit" className="primary-button">
-          Submit Experiment
+          Continue
         </button>
       </form>
 

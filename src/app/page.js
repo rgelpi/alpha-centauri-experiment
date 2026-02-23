@@ -7,6 +7,7 @@ import Captcha from '@/components/Captcha';
 import VignetteController from '@/components/VignetteController';
 import PsychometricScales from '@/components/PsychometricScales';
 import DemographicsForm from '@/components/DemographicsForm';
+import FeedbackForm from '@/components/FeedbackForm';
 import { saveExperimentData } from '@/lib/firebase';
 
 function ExperimentContent() {
@@ -18,6 +19,7 @@ function ExperimentContent() {
     vignetteResponses: [],
     scaleResponses: {},
     demographics: {},
+    feedback: '',
     urlParams: {
       ProlificPid: searchParams.get('ProlificPid') || "DEFAULT_TEST",
       StudyId: searchParams.get('StudyId') || "DEFAULT_TEST",
@@ -53,7 +55,15 @@ function ExperimentContent() {
   //   setStep('DEMOGRAPHICS');
   // };
 
-  const handleDemographicsComplete = async (responses) => {
+  const handleDemographicsComplete = (responses) => {
+    setData(prev => ({
+      ...prev,
+      demographics: responses
+    }));
+    setStep('FEEDBACK');
+  };
+
+  const handleFeedbackComplete = async (feedbackText) => {
     const completedAt = new Date().toISOString();
     let completionTimeSeconds = null;
 
@@ -65,7 +75,7 @@ function ExperimentContent() {
 
     const finalData = {
       ...data,
-      demographics: responses,
+      feedback: feedbackText,
       completedAt,
       completionTimeSeconds
     };
@@ -103,6 +113,8 @@ function ExperimentContent() {
       {step === 'SCALES' && <PsychometricScales onComplete={handleScalesComplete} />}
 
       {step === 'DEMOGRAPHICS' && <DemographicsForm onComplete={handleDemographicsComplete} />}
+
+      {step === 'FEEDBACK' && <FeedbackForm onComplete={handleFeedbackComplete} />}
 
       {step === 'THANK_YOU' && (
         <div className="section-container">
